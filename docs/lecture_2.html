@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>QEco 2025 --- Allesina lecture notes – lecture_2</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">QEco 2025 — Allesina lecture notes</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Lecture notes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lecture_2.html">GLV with random parameters</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">QEco 2025</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Generalized Lotka-Volterra model</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_2.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">GLV with random parameters</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#glv-with-random-parameters" id="toc-glv-with-random-parameters" class="nav-link active" data-scroll-target="#glv-with-random-parameters">GLV with random parameters</a>
+  <ul class="collapse">
+  <li><a href="#all-species-growing-logistically" id="toc-all-species-growing-logistically" class="nav-link" data-scroll-target="#all-species-growing-logistically">All species growing logistically</a></li>
+  <li><a href="#the-random-zoo" id="toc-the-random-zoo" class="nav-link" data-scroll-target="#the-random-zoo">The random zoo</a></li>
+  <li><a href="#random-zoo-and-experimental-data" id="toc-random-zoo-and-experimental-data" class="nav-link" data-scroll-target="#random-zoo-and-experimental-data">Random zoo and experimental data</a></li>
+  </ul></li>
+  <li><a href="#glv-and-metatpopulation-dynamics" id="toc-glv-and-metatpopulation-dynamics" class="nav-link" data-scroll-target="#glv-and-metatpopulation-dynamics">GLV and metatpopulation dynamics</a>
+  <ul class="collapse">
+  <li><a href="#metapopulations" id="toc-metapopulations" class="nav-link" data-scroll-target="#metapopulations">Metapopulations</a></li>
+  <li><a href="#colonization-competition-tradeoff" id="toc-colonization-competition-tradeoff" class="nav-link" data-scroll-target="#colonization-competition-tradeoff">Colonization-competition tradeoff</a></li>
+  <li><a href="#the-model-is-glv" id="toc-the-model-is-glv" class="nav-link" data-scroll-target="#the-model-is-glv">The model is GLV</a></li>
+  <li><a href="#computing-equilibria" id="toc-computing-equilibria" class="nav-link" data-scroll-target="#computing-equilibria">Computing equilibria</a></li>
+  <li><a href="#random-parameters" id="toc-random-parameters" class="nav-link" data-scroll-target="#random-parameters">Random parameters</a></li>
+  <li><a href="#sketch-of-the-proof" id="toc-sketch-of-the-proof" class="nav-link" data-scroll-target="#sketch-of-the-proof">Sketch of the proof</a></li>
+  <li><a href="#references-and-further-readings" id="toc-references-and-further-readings" class="nav-link" data-scroll-target="#references-and-further-readings">References and further readings</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="glv-with-random-parameters" class="level1">
+<h1>GLV with random parameters</h1>
+<section id="all-species-growing-logistically" class="level2">
+<h2 class="anchored" data-anchor-id="all-species-growing-logistically">All species growing logistically</h2>
+<p>Suppose we take <span class="math inline">\(n\)</span> populations, each growing according to:</p>
+<p><span class="math display">\[
+\dot{x}_i = x_i (r_i - A_{ii} x_i)
+\]</span></p>
+<p>with <span class="math inline">\(A_{ii} &gt; 0\)</span>. We assume that the growth rates are sampled independently from a distribution: <span class="math inline">\(r_i \sim Q\)</span>, a distribution with mean <span class="math inline">\(0\)</span>, <span class="math inline">\(\mathbb E(r_i) = 0\)</span> and symmetric about its mean, such that <span class="math inline">\(\phi(r_i) = \phi(-r_i)\)</span>, where <span class="math inline">\(\phi(\cdot)\)</span> is the p.d.f. of distribution <span class="math inline">\(Q\)</span>. For example, we could choose <span class="math inline">\(r_i \sim \mathcal N(0, \sigma^2)\)</span>, or <span class="math inline">\(r_i \sim \mathcal U[-1, 1]\)</span>. Naturally, whenever <span class="math inline">\(r_i &gt; 0\)</span>, the population will grow to <span class="math inline">\(x_i^\star = r_i / A_{ii}\)</span>. If <span class="math inline">\(r_i &lt; 0\)</span>, on the other hand, the population will go extinct. Because of the symmetry around zero, each population has therefore probability <span class="math inline">\(1/2\)</span> of persisting. When we have <span class="math inline">\(n\)</span> populations, the number of coexisting populations <span class="math inline">\(\|k\|\)</span> is a random variable following the binomial distribution:</p>
+<p><span class="math display">\[
+p(\|k\| | n) = \binom{n}{\|k\|} \frac{1}{2^n}\quad \|k\| \sim \mathcal B\left(n, \frac{1}{2}\right)
+\]</span></p>
+</section>
+<section id="the-random-zoo" class="level2">
+<h2 class="anchored" data-anchor-id="the-random-zoo">The random zoo</h2>
+<p>Now consider a GLV model with random parameters. We choose <span class="math inline">\(r_i\)</span> from a distribution with mean zero and symmetric about the mean, and each interaction <span class="math inline">\(A_{ij}\)</span> from a distribution with mean zero and symmetric about the mean. Moreover, we add a constant to the diagonal of the matrix such that the symmetric part of <span class="math inline">\(A\)</span>, <span class="math inline">\(H(A) = \frac{1}{2} (A + A^T)\)</span> is positive definite. As we have seen before, this means that dynamics will always converge to a saturated equilibrium.</p>
+<p>We now introduce a family of <span class="math inline">\(2^n\)</span> matrices <span class="math inline">\(S_i\)</span>, with:</p>
+<p><span class="math display">\[
+\begin{aligned}
+S_1 &amp;= \begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; \cdots &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0\\
+\vdots &amp; \vdots &amp; \vdots &amp;\ddots &amp;\vdots\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp;1
+\end{pmatrix} = I_n\\
+S_2 &amp;= \begin{pmatrix}
+-1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; \cdots &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; \cdots &amp; 0\\
+\vdots &amp; \vdots &amp; \vdots &amp;\ddots &amp;\vdots\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp;1
+\end{pmatrix} \\
+S_3 &amp;= \begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0\\
+0 &amp; -1 &amp; 0 &amp; \cdots &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; \cdots &amp; 0\\
+\vdots &amp; \vdots &amp; \vdots &amp;\ddots &amp;\vdots\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp;1
+\end{pmatrix} \\
+S_4 &amp;= \begin{pmatrix}
+-1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0\\
+0 &amp; -1 &amp; 0 &amp; \cdots &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; \cdots &amp; 0\\
+\vdots &amp; \vdots &amp; \vdots &amp;\ddots &amp;\vdots\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp;1
+\end{pmatrix}\\
+\vdots\\
+S_{2^n} &amp;= \begin{pmatrix}
+-1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0\\
+0 &amp; -1 &amp; 0 &amp; \cdots &amp; 0\\
+0 &amp; 0 &amp; -1 &amp; \cdots &amp; 0\\
+\vdots &amp; \vdots &amp; \vdots &amp;\ddots &amp;\vdots\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp;-1
+\end{pmatrix} = -I_n\\
+\end{aligned}
+\]</span></p>
+<p>These matrices, called <em>signature matrices</em> are their own inverse (a matrix with this property is called <em>involutory</em>), and therefore, we have that <span class="math inline">\(S_i S_i = S_i^2 = I_n\)</span>. Geometrically, these matrices represent a reflection in each of the axes corresponding to the negated rows or columns.</p>
+<p>We then consider what happens when we transform the parameters by multiplying them by <span class="math inline">\(S_i\)</span>. Take an arbitrary GLV system, and solve for the <span class="math inline">\(x\)</span> that makes <span class="math inline">\(r + Ax = 0_n\)</span>:</p>
+<p><span class="math display">\[
+x = -A^{-1} r
+\]</span></p>
+<p>The vector is a feasible equilibrium for the system if <span class="math inline">\(x &gt; 0_n\)</span>. Now consider the transformed system:</p>
+<p><span class="math display">\[
+r' = S_i r \quad A' = S_iAS_i
+\]</span></p>
+<p>Note that <span class="math inline">\(A'\)</span> is similar to <span class="math inline">\(A\)</span>, and therefore has the same eigenvalues; moreover, <span class="math inline">\(\phi(r') = \phi(r)\)</span> and <span class="math inline">\(\phi(A') = \phi(A)\)</span>, because of symmetry. Now compute the new solution</p>
+<p><span class="math display">\[
+\begin{aligned}
+x' &amp;= -(S_iAS_i)^{-1} S_i r\\ &amp;=-S_iA^{-1}S_i S_i r\\
+&amp;=-S_iA^{-1}r\\
+&amp;= S_i x
+\end{aligned}
+\]</span></p>
+<p>That is, the transformation changes the sign of the components of <span class="math inline">\(x\)</span> corresponding to the negative coefficients in <span class="math inline">\(S_i\)</span>. Hence, for any possible choice of <span class="math inline">\(r\)</span> and <span class="math inline">\(A\)</span>, there is only one possible choice of <span class="math inline">\(S_i\)</span> that makes the equilibrium feasible. Because all matrices <span class="math inline">\(A'\)</span> and all vectors <span class="math inline">\(r'\)</span> have the same probability/density, then the probability of having a positive <span class="math inline">\(x\)</span> is exactly <span class="math inline">\(1/2^n\)</span>. Thus, a system with random parameters and a strongly stable matrix of interactions has the same probability of feasibility as that of a system in which populations are not interacting!</p>
+<p>We have seen that when <span class="math inline">\(A\)</span> is such that <span class="math inline">\(H(A)\)</span> is negative definite, dynamics always converge to a saturated equilibrium. We want to compute the probability of finding a saturated equilibrium, in which populations belonging to set <span class="math inline">\(k\)</span> coexist, and the remaining populations cannot invade when rare.</p>
+<p>We thus divide <span class="math inline">\(x\)</span>, <span class="math inline">\(r\)</span> and <span class="math inline">\(A\)</span> as:</p>
+<p><span class="math display">\[
+x = \begin{pmatrix}
+y\\
+z
+\end{pmatrix} \quad \tilde{x} = \begin{pmatrix}
+y^\star\\
+0_{\|n-k\|}
+\end{pmatrix} \quad A = \begin{pmatrix}
+\mathfrak A &amp; \mathfrak B\\
+\mathfrak C &amp; \mathfrak D
+\end{pmatrix}\quad r = \begin{pmatrix}
+\mathfrak r\\
+\mathfrak s
+\end{pmatrix}
+\]</span></p>
+<p>We also divide <span class="math inline">\(S_i\)</span> into:</p>
+<p><span class="math display">\[
+S_i = \begin{pmatrix}
+S_{i}^{(k)} &amp; 0_{\|k\|, \|n-k\|}\\
+0_{\|n-k\|, \|n\|} &amp; S_{i}^{(n-k)}
+\end{pmatrix}
+\]</span></p>
+<p>When we use the signature matrix, the vector <span class="math inline">\(\mathfrak s\)</span> and the matrix <span class="math inline">\(\mathfrak C\)</span> become:</p>
+<p><span class="math display">\[
+\mathfrak s' = S_i^{(n-k)} \mathfrak s\quad \mathfrak C' = S_i^{(n-k)} \mathfrak C S_i^{(k)}
+\]</span></p>
+<p>The feasibility and nonivasibility condition, for a given choice of <span class="math inline">\(S_i\)</span> read:</p>
+<p><span class="math display">\[
+\begin{cases}
+y' = S_i^{(k)} (-\mathfrak A^{-1}\mathfrak r) &gt; 0_{\|k\|}\\
+D(z)^{-1} z =S_i^{(n-k)}(\mathfrak s + \mathfrak C y') &lt; 0_{\|n-k\|}\\
+\end{cases}
+\]</span></p>
+<p>There is only one choice out of <span class="math inline">\(2^{\|k\|}\)</span> that makes <span class="math inline">\(y' &gt; 0_{\|k\|}\)</span>; moreover, there is only one choice of <span class="math inline">\(S_i^{(n-k)}\)</span> that fulfills the noninvasibility condition, out of <span class="math inline">\(2^{\|n-k\|}\)</span> equiprobable choices. Then, we have that the probability of finding exactly <span class="math inline">\(\|k\|\)</span> populations coexisting at the saturated equilibrium, with the remaining <span class="math inline">\(\|n-k\|\)</span> that cannot invade is exactly <span class="math inline">\(1/(2^{\|k\|} \cdot 2^{\|n-k\|}) = 1/2^n\)</span>. The number of coexisting populations at the saturated equilibrium follows the binomial distribution:</p>
+<p><span class="math display">\[
+p(\|k\| | n) = \binom{n}{\|k\|} \frac{1}{2^n}\quad \|k\| \sim \mathcal B\left(n, \frac{1}{2}\right)
+\]</span></p>
+<p>exactly as for the non-interacting case.</p>
+</section>
+<section id="random-zoo-and-experimental-data" class="level2">
+<h2 class="anchored" data-anchor-id="random-zoo-and-experimental-data">Random zoo and experimental data</h2>
+<p>We have seen above that in a (stable) GLV model with random interactions, the expected number of species coexisting is proportional to the size of the initial pool: <span class="math inline">\(\mathbb E(\|k\|) = n/2\)</span>. We start the system with all the populations present, and we assemble a final community from the <em>top-down</em>. Interestingly, this type of experiment is carried out with increasing frequency in microbial ecology, where a microbial community taken from a certain environment is challenged with a new synthetic environment in the laboratory. For example, Leonora Bittleston and colleagues extracted the microbial communities inhabiting 10 distinct pitcher plants, and cultured them in synthetic media in the laboratory for two months. They plot the number of microbial strains present at the beginning of the experiment (Day 3, such that the strains that cannot grow in the medium are filtered out) and after two months (Day 63), finding a striking linear relationship between the initial size <span class="math inline">\(n\)</span> and that at the end of the experiment <span class="math inline">\(\|k\|\)</span>:</p>
+<p><img src="images/RZ.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="glv-and-metatpopulation-dynamics" class="level1">
+<h1>GLV and metatpopulation dynamics</h1>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="images/Levins.jpg" class="img-fluid figure-img" style="width:40.0%" alt="Richard Levins"></p>
+</figure>
+</div>
+<p>Richard Levins (1930-2016). Born in Brooklyn, New York, he studied agriculture and mathematics at Cornell. Early on, influenced by geneticist and polymath JBS Haldane, he became a Marxist activist. Upon graduation, having been blacklisted as a communist (and with the Korean War raging), he moved to Puerto Rico with his wife, and set up a farm. In his spare time, he conducted experiments on fruit flies, organized anti-colonialist rallies and anti-war protests, and taught at the University of Puerto Rico. In 1964, he was invited to Cuba to help organize the biology department of the University of Havana. He received his doctorate from Columbia University in 1965. In 1967 he moved to the University of Chicago, where he joined Richard Lewontin—with whom he established a lifelong collaboration. They both moved to Harvard in the late 1970s.</p>
+<p>It is impossible to summarize his numerous contributions to ecology, mathematics, political science, and the philosophy of science. He has inspired countless ecologists, and his approach and style are still visible in many of the research programs being carried out today. Of particular interest for this class, his theory of evolution in a changing environment (Levins (1968)), the development of the idea of limiting similarity (MacArthur and Levins (1967)), his work on metapopulation dynamics (Levins (1969)), and the development of Loop Analysis (i.e., a qualitative theory for dynamical systems, Puccia and Levins (2013)).</p>
+<section id="metapopulations" class="level2">
+<h2 class="anchored" data-anchor-id="metapopulations">Metapopulations</h2>
+<p>In 1969, Richard Levins—then a professor at U. Chicago—proposed a simple model for a “metapopulation”, i.e., a “population of populations in which local extinctions are balanced by remigration from other populations” (Levins (1969)).</p>
+<p>The model is very simple. Suppose that there are very many patches of suitable habitat, and that we track the proportion of patches occupied by a certain species, <span class="math inline">\(p(t)\)</span>. Two processes affect the proportion of occupied patches: extinction, turning an occupied patch into a vacant patch, and colonization, turning a vacant patch into an occupied patch. For the simplest case, suppose that occupied patches can send “propagules” to empty patches at a fixed rate <span class="math inline">\(\gamma &gt; 0\)</span>, and that the rate at which local populations go extinct is the same for all patches, <span class="math inline">\(\delta &gt; 0\)</span>.</p>
+<p>Call <span class="math inline">\(q(t) = 1-p(t)\)</span> the proportion of vacant patches. Then, the dynamics are described by the equations:</p>
+<p><span class="math display">\[
+\begin{cases}
+\dot{p}(t) = -\delta p(t) + \gamma p(t)q(t)\\
+\dot{q}(t) = \delta p(t) - \gamma p(t)q(t)\\
+\end{cases}
+\]</span></p>
+<p>in which we assume mass-action (like in GLV). Note that the two equations sum to zero (i.e., we’re in a zero-sum setting), and therefore we can substitute <span class="math inline">\(q(t) = 1-p(t)\)</span> to obtain:</p>
+<p><span class="math display">\[
+\dot{p} = p(-\delta + \gamma q) = p(\gamma - \delta - \gamma p)
+\]</span></p>
+<p>which is the usual equation for the logistic growth, with growth rate <span class="math inline">\(\gamma - \delta\)</span> and self-interaction <span class="math inline">\(\gamma\)</span>. As such, as long as <span class="math inline">\(\gamma &gt; \delta\)</span>, the proportion of inhabited patches will converge to <span class="math inline">\(p^\star = 1 - \delta/\gamma &gt; 0\)</span>, which is globally stable.</p>
+</section>
+<section id="colonization-competition-tradeoff" class="level2">
+<h2 class="anchored" data-anchor-id="colonization-competition-tradeoff">Colonization-competition tradeoff</h2>
+<p>Levins’ model was extended in a number of ways. One of the most interesting cases is that in which we have <span class="math inline">\(n\)</span> species, each characterized by an extinction and a colonization rate, and there is a trade-off such that better colonizers are worse competitors, and vice versa. In particular:</p>
+<ul>
+<li><span class="math inline">\(p_i\)</span> is the proportion of patches occupied by population <span class="math inline">\(i\)</span>, with <span class="math inline">\(\sum_j p_j \leq 1\)</span></li>
+<li><span class="math inline">\(m_i\)</span> is the extinction rate for population <span class="math inline">\(i\)</span></li>
+<li><span class="math inline">\(c_i\)</span> is the colonization rate for population <span class="math inline">\(i\)</span></li>
+<li>each species can colonize patches occupied by inferior competitors (i.e., these patches “look” empty to them)</li>
+<li>competitive abilities are inversely related to the colonization rates, i.e., if <span class="math inline">\(c_j &lt; c_i\)</span>, then <span class="math inline">\(j\)</span> is a better competitor than <span class="math inline">\(i\)</span></li>
+</ul>
+<p>The model is a system of <span class="math inline">\(n\)</span> coupled differential equations:</p>
+<p><span class="math display">\[
+\dot{p}_i = -m_i p_i - \sum_{j=1}^{i-1} c_j p_j p_i + c_i p_i \left(1-\sum_{j=1}^{i} p_j\right)
+\]</span></p>
+<p>There are three processes at play:</p>
+<ul>
+<li><span class="math inline">\(m_i p_i\)</span> the rate at which patches occupied by <span class="math inline">\(i\)</span> become empty</li>
+<li><span class="math inline">\(c_j p_j p_i\)</span> propagules from superior competitors <span class="math inline">\(j\)</span> (produced at rate <span class="math inline">\(c_j p_j\)</span>) reach patches occupied by <span class="math inline">\(i &lt; j\)</span> and turn them over</li>
+<li>propagules of <span class="math inline">\(i\)</span>, produced at rate <span class="math inline">\(c_i p_i\)</span>, reach patches that are either empty or occupied by inferior competitors (written as the difference between <span class="math inline">\(1\)</span> and the sum of the proportion of patches occupied by species with equal or better competitive abilities, <span class="math inline">\(1-\sum_{j=1}^{i} p_j\)</span>) and colonize them</li>
+</ul>
+</section>
+<section id="the-model-is-glv" class="level2">
+<h2 class="anchored" data-anchor-id="the-model-is-glv">The model is GLV</h2>
+<p>With some rearranging, we can write this model as GLV:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\dot{p}_i &amp;= p_i\left(-m_i - \sum_{j=1}^{i-1} c_j p_j + c_i \left(1-\sum_{j=1}^{i} p_j\right)\right)\\
+&amp;= p_i\left(-m_i - \sum_{j=1}^{i-1} c_j p_j + c_i - c_i p_i -\sum_{j=1}^{i-1} c_i p_j \right)\\
+&amp;= p_i\left(c_i -m_i - c_i p_i -\sum_{j=1}^{i-1} (c_i + c_j) p_j \right)\\
+&amp;= p_i\left(r_i - \sum_{j}A_{ij} p_j\right)
+\end{aligned}
+\]</span> Where we have defined the matrix <span class="math inline">\(A\)</span>:</p>
+<p><span class="math display">\[
+A = \begin{pmatrix}
+c_1 &amp; 0 &amp; 0 &amp;\cdots &amp;0\\
+c_1 + c_2 &amp; c_2 &amp; 0 &amp; \cdots &amp; 0\\
+c_1 + c_3 &amp; c_2 + c_3 &amp; c_3 &amp; \cdots &amp; 0\\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
+c_1 + c_n &amp; c_2 + c_n &amp; c_3 + c_n &amp; \cdots &amp; c_n
+\end{pmatrix}
+\]</span></p>
+<p>and <span class="math inline">\(r_i = c_i - m_i\)</span>.</p>
+<p>We want to show that for each initial set of species in the system, dynamics will converge to a unique saturated equilibrium. To prove this, it is sufficient to find a positive diagonal matrix, <span class="math inline">\(D(w)\)</span> such that</p>
+<p><span class="math display">\[
+M = D(w) A + A^T D(w)
+\]</span></p>
+<p>is positive definite. Take <span class="math inline">\(w = c^{-1}\)</span> (i.e., the reciprocals of the colonization rates). Then we have that</p>
+<p><span class="math display">\[
+M = 1_n 1_n^T + Q
+\]</span></p>
+<p>Where</p>
+<p><span class="math display">\[
+Q_{ij} = \begin{cases}
+1 \quad \text{if}\; j = i\\
+\frac{c_i}{c_j} \quad \text{if}\; j &gt; i\\
+\frac{c_j}{c_i} \quad \text{if}\; j &lt; i\\
+\end{cases}
+\]</span></p>
+<p>To show that <span class="math inline">\(M\)</span> is positive definite, we write the Cholesky decomposition of <span class="math inline">\(Q\)</span></p>
+<p><span class="math display">\[
+Q = R^T R
+\]</span></p>
+<p>With</p>
+<p><span class="math display">\[
+R_{ij} =
+\begin{cases}
+\frac{\sqrt{c_i^2 - c_{i-1}^2}}{c_j}  \quad \text{if}\; j \geq i\\
+0 \quad \text{if}\; j &lt; i\\
+\end{cases}
+\]</span></p>
+<p>(defining <span class="math inline">\(c_0 = 0\)</span>). Note that all the elements of <span class="math inline">\(R_{ij} \geq 0\)</span>. As such, <span class="math inline">\(Q\)</span> is positive (semi-)definite, and <span class="math inline">\(M\)</span> is the sum of two positive (semi-)definite matrices, and is thus positive (semi-)definite.</p>
+<p>An example. Suppose <span class="math inline">\(n = 3\)</span>, then:</p>
+<p><span class="math display">\[
+A = \begin{pmatrix}
+c_1 &amp; 0 &amp; 0\\
+c_1 + c_2 &amp; c_2 &amp; 0\\
+c_1 + c_3 &amp; c_2 + c_3 &amp; c_3
+\end{pmatrix}
+\]</span> <span class="math display">\[
+M = D(c)^{-1} A + A^T D(c)^{-1}=\begin{pmatrix}
+2 &amp; 1 + \frac{c_1}{c_2} &amp; 1 + \frac{c_1}{c_3}\\
+1 + \frac{c_1}{c_2} &amp;2 &amp; 1 + \frac{c_2}{c_3}\\
+1 + \frac{c_1}{c_3} &amp; 1 + \frac{c_2}{c_3} &amp; 2\\
+\end{pmatrix}
+\]</span> <span class="math display">\[
+Q = \begin{pmatrix}
+1 &amp; \frac{c_1}{c_2} &amp; \frac{c_1}{c_3}\\
+\frac{c_1}{c_2} &amp; 1 &amp; \frac{c_2}{c_3}\\
+\frac{c_1}{c_3} &amp; \frac{c_2}{c_3} &amp; 1\\
+\end{pmatrix}
+\]</span> <span class="math display">\[
+R = \begin{pmatrix}
+1 &amp; \frac{c_1}{c_2} &amp; \frac{c_1}{c_3}\\
+0 &amp; \frac{\sqrt{c_2^2 - c_1^2}}{c_2} &amp; \frac{\sqrt{c_2^2 - c_1^2}}{c_3}\\
+0 &amp; 0 &amp; \frac{\sqrt{c_3^2 - c_2^2}}{c_3}
+\end{pmatrix} \quad Q = R^T R
+\]</span></p>
+</section>
+<section id="computing-equilibria" class="level2">
+<h2 class="anchored" data-anchor-id="computing-equilibria">Computing equilibria</h2>
+<p>For simplicity, we are going to consider the case in which <span class="math inline">\(m_i = m\)</span> for all <span class="math inline">\(i\)</span>. Because the matrix is lower-triangular, computing the equilibrium is especially simple, given that the equilibrium value for each species depends only on those of the preceding species. The equilibrium of the first species is given by:</p>
+<p><span class="math display">\[
+c_1 p_1 = c_1 -m
+\]</span></p>
+<p>and thus</p>
+<p><span class="math display">\[
+p_1^\star = \frac{c_1 - m}{c_1} = 1 - \frac{m}{c_1}
+\]</span></p>
+<p>The first species follows the Levins’ model, and persists as long as <span class="math inline">\(c_1 &gt; m\)</span>. We compute the equilibrium for the second species, assuming that the first species is present:</p>
+<p><span class="math display">\[
+\begin{aligned}
+(c_1 + c_2) p_1^\star + c_2 p_2^\star = c_2 - m\\
+(c_1 + c_2)\left(1 - \frac{m}{c_1}\right) + c_2 p_2^\star &amp;=  c_2 - m\\
+c_1 + c_2 - m - m \frac{c_2}{c_1} +  c_2 p_2^\star &amp;=  c_2 - m\\
+p_2^\star = \frac{m}{c_1} - \frac{c_1}{c_2}
+\end{aligned}
+\]</span></p>
+<p>Thus, species 2 can establish if:</p>
+<p><span class="math display">\[
+c_2 &gt; \frac{c_1^2}{m}
+\]</span></p>
+<p>Computing the equilibrium of the third species we find that it is positive if:</p>
+<p><span class="math display">\[
+c_3 &gt; \frac{c_2^2}{\frac{c_1^2}{m}}
+\]</span></p>
+<p>You can see that there is a simple pattern. Call <span class="math inline">\(l_0 = m\)</span>, then the condition for the first species to persist is that <span class="math inline">\(c_1 &gt; l_0\)</span>; second species to persist whenever <span class="math inline">\(c_2 &gt; c_1^2 / l_0 = l_1\)</span>; the third species persists whenever <span class="math inline">\(c_3 &gt; c_2^2 / l_1\)</span>, and so forth:</p>
+<p><span class="math display">\[
+l_i = \frac{c_i^2}{l_{i-1}}
+\]</span></p>
+<p>This value represents the “shadow” each species that establishes casts on the colonization axis. A worse competitor <span class="math inline">\(i + 1\)</span> can establish if and only if:</p>
+<p><span class="math display">\[
+c_{i+1} &gt; l_i
+\]</span></p>
+<p>Thus, if the species has a sufficiently large colonization rate, it will establish; if not, it will go extinct. In this way, we can compute the set of coexisting species in <em>linear time</em> (i.e., without the need to invert the matrix).</p>
+</section>
+<section id="random-parameters" class="level2">
+<h2 class="anchored" data-anchor-id="random-parameters">Random parameters</h2>
+<p>Sample the colonization rate values indipendently from a distribution (with positive support); for example <span class="math inline">\(\gamma_i \sim \mathcal U[m,1+m]\)</span>, or from the exponential distribution <span class="math inline">\(\gamma_i \sim \mathcal{Exp(\lambda) + m}\)</span> (we sample values above the mortality rate—any lower value for the colonization rate would lead to extinction). Then sort them and assign the smallest value to species 1 (<span class="math inline">\(c_1 = \min_i \gamma_i\)</span>), the second smallest value to species 2, etc. These are called the <em>order statistics</em> of the distribution.</p>
+<p>How many species will coexist? Given that the final set of coexisting species can be found in linear time, we can run large experiments in which we compute the number of coexisting species <span class="math inline">\(\|k\|\)</span> when starting with <span class="math inline">\(n\)</span> for different sizes <span class="math inline">\(n\)</span> and choice of distribution from which to sample the colonization rates.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="lecture_2_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>We can see that as <span class="math inline">\(n\)</span> increases, the distribution of <span class="math inline">\(\|k\|\)</span> approaches the binomial distribution (plotted in red)—to be precise, given that the first species persists by definition (because <span class="math inline">\(c_1 &gt; m\)</span> by design), we have that asymptotically <span class="math inline">\(\|k\|-1 \sim \mathcal B(n-1, \frac{1}{2})\)</span>, irrespective of the distribution used to sample the colonization rates. Therefore, as <span class="math inline">\(n \to \infty\)</span>, the distribution of surviving species is <em>universal</em>.</p>
+</section>
+<section id="sketch-of-the-proof" class="level2">
+<h2 class="anchored" data-anchor-id="sketch-of-the-proof">Sketch of the proof</h2>
+<p>The argument to support these claims is a little too complicated for the time that we have available. To give a sense of how the argument is developed, we show that the probability that <span class="math inline">\(\|k\|=1\)</span> is about <span class="math inline">\(1/2^{(n-1)}\)</span> when we sample the colonization rates from the uniform distribution <span class="math inline">\(\mathcal U[m, m+1]\)</span>.</p>
+<p>We can write the joint distribution for <span class="math inline">\((c_1, c_n)\)</span> (i.e., the smallest and largest colonization rate) for an arbitrary (absolutely continuous) distribution, from which we extract <span class="math inline">\(n\)</span> colonization rates as:</p>
+<p><span class="math display">\[
+f(c_1,c_n) = n(n-1) (\Phi(c_n)-\Phi(c_1))^{(n-2)} \phi(c_1) \phi(c_n)
+\]</span></p>
+<p>where <span class="math inline">\(\phi(\cdot)\)</span> is the probability density function for the distribution used to sample the values, and <span class="math inline">\(\Phi(\cdot)\)</span> the cumulative density function.</p>
+<p>When <span class="math inline">\(n\)</span> is large, we can approximate the “niche shadow” value as follows. We know that species <span class="math inline">\(j\)</span> is excluded if <span class="math inline">\(c_i &lt; c_j &lt; l_i\)</span>, where <span class="math inline">\(l_i\)</span> is the niche shadow cast by species <span class="math inline">\(i\)</span>:</p>
+<p><span class="math display">\[
+l_i = \frac{c_i^2}{l_{i-1}}
+\]</span></p>
+<p>Thus, to be included in the set of coexisting species, we need <span class="math inline">\(c_j &gt; l_i\)</span>. We introduce <span class="math inline">\(X_i\)</span>, the amount by which <span class="math inline">\(c_j\)</span> exceeds <span class="math inline">\(l_{i-1}\)</span>:</p>
+<p><span class="math display">\[
+X_i = c_i - l_{i-1}
+\]</span></p>
+<p>Then, we have</p>
+<p><span class="math display">\[
+l_i = \frac{(l_{i-1} + X_i)^2}{l_{i-1}} = l_{i-1} + 2 X_i +\frac{X_i^2}{l_{i-1}} \approx l_{i-1} + 2 X_i = 2 c_i - l_{i-1}
+\]</span></p>
+<p>where we have neglected the term <span class="math inline">\(X_i^2 / l_{i-1}\)</span>, which is small when <span class="math inline">\(n\)</span> is large (because the colonization values are closer together).</p>
+<p>We now can compute the probability that species <span class="math inline">\(1\)</span> excludes all other species, assuming that the niche shadow cast by species 1 is <span class="math inline">\(\approx 2 c_1 -m\)</span>. We need to distinguish between two cases: a) the shadow cast by species 1 does not exceed the upper bound for the distribution (<span class="math inline">\(m+1\)</span> in this case) and all other colonization rates fall into <span class="math inline">\((c_1, 2 c_1 - m)\)</span>, and b) the shadow cast by species 1 exceeds the bound, and thus all other species are excluded by definition.</p>
+<p>The niche shadow for the first species, <span class="math inline">\(l_1 \approx 2 c_1 - m\)</span> does not exceed <span class="math inline">\(m+1\)</span> whenever <span class="math inline">\(c_1 \leq m + 1/2\)</span>. We thus compute the probability that i) <span class="math inline">\(c_1 \leq m + 1/2\)</span>, and ii) <span class="math inline">\(c_n \leq 2 c_1 -m\)</span> for the uniform distribution, using:</p>
+<p><span class="math display">\[
+\phi(z) = 1\quad \Phi(z) = z -m
+\]</span></p>
+<p>The density for <span class="math inline">\((c_1,c_n)\)</span> simplifies to:</p>
+<p><span class="math display">\[
+f(c_1,c_n) = n(n-1) (c_n - c_1)^{(n-2)}
+\]</span></p>
+<p>and we need to integrate this function for:</p>
+<p><span class="math display">\[
+n(n-1)\int_{m}^{m + 1/2} \int_{c_1}^{2c_1 - m}(c_n-c_1)^{(n-2)} dc_1 dc_n = 2^{-n}
+\]</span> Now we treat the case in which <span class="math inline">\(c_1\)</span> exceeds <span class="math inline">\(m + 1/2\)</span>, and <span class="math inline">\(c_1 \leq c_n \leq m+1\)</span>:</p>
+<p><span class="math display">\[
+n(n-1)\int_{m+1/2}^{m + 1} \int_{c_1}^{m+1}(c_n-c_1)^{(n-2)} dc_1 dc_n = 2^{-n}
+\]</span></p>
+<p>Summing the two mutually-exclusive outcomes, we find</p>
+<p><span class="math display">\[
+P(\|k\| = 1) = 2^{-n} + 2^{-n} = 2^{-n+1}
+\]</span></p>
+<p>consistently with the asymptotic distribution <span class="math inline">\(\|k\|-1 \sim \mathcal B(n-1, 1/2)\)</span>. This approach can be extended by computing the probability that a given species <span class="math inline">\(i\)</span> excludes <span class="math inline">\(\kappa_i\)</span> other species; by summing across all combinations we can approximate the distribution of coexisting species (see Miller <em>et al.</em>, SI section B).</p>
+</section>
+<section id="references-and-further-readings" class="level2">
+<h2 class="anchored" data-anchor-id="references-and-further-readings">References and further readings</h2>
+<p>Coexistence in GLV with random parameters and stable interaction matrix</p>
+<ul>
+<li>Serván, C.A., Capitán, J.A., Grilli, J., Morrison, K.E. and Allesina, S., 2018. <a href="https://www.nature.com/articles/s41559-018-0603-6">Coexistence of many species in random ecosystems</a>. Nature ecology &amp; evolution, 2(8), pp.1237-1242.</li>
+</ul>
+<p>Experiment on pitcher plant microbial communities</p>
+<ul>
+<li>Bittleston, L.S., Gralka, M., Leventhal, G.E., Mizrahi, I. and Cordero, O.X., 2020. <a href="https://www.nature.com/articles/s41467-020-15169-0">Context-dependent dynamics lead to the assembly of functionally distinct microbial communities</a>. Nature communications, 11(1), p.1440.</li>
+</ul>
+<p>The original metapopulation model:</p>
+<ul>
+<li>Levins, R., 1969. <a href="https://academic.oup.com/ae/article-abstract/15/3/237/255899">Some demographic and genetic consequences of environmental heterogeneity for biological control</a>. Bulletin of the ESA, 15(3), pp.237-240.</li>
+</ul>
+<p>Many authors contributed to the study of the model with competition-colonization tradeoff:</p>
+<ul>
+<li>Hastings, A., 1980. <a href="https://www.sciencedirect.com/science/article/pii/0040580980900593">Disturbance, coexistence, history, and competition for space</a>. Theoretical population biology, 18(3), pp.363-373.</li>
+</ul>
+<p>derived the model by extending Levins’ model to <span class="math inline">\(n\)</span> populations. Noted that better competitors need to be poor colonizers to yield coexistence.</p>
+<ul>
+<li>Tilman, D., 1994. <a href="https://esajournals.onlinelibrary.wiley.com/doi/abs/10.2307/1939377">Competition and biodiversity in spatially structured habitats</a>. Ecology, 75(1), pp.2-16.</li>
+</ul>
+<p>performed a thorough analysis of the model, inspired by data on grasslands as well as life-history theory. Noted that infinitely many species could coexist, and derived conditions for limiting similarity.</p>
+<ul>
+<li>Nowak, M.A.&nbsp;and May, R.M., 1994. <a href="https://royalsocietypublishing.org/doi/abs/10.1098/rspb.1994.0012">Superinfection and the evolution of parasite virulence</a>. Proceedings of the Royal Society of London. Series B: Biological Sciences, 255(1342), pp.81-89.</li>
+</ul>
+<p>derived the model in the context of superinfection (better pathogens displace others in infected individuals). Showed that this would lead to the coexistence of pathogens of different virulence, rather than convergence to an optimum.</p>
+<ul>
+<li>Kinzig, A.P., Levin, S.A., Dushoff, J. and Pacala, S., 1999. <a href="https://www.journals.uchicago.edu/doi/full/10.1086/303182">Limiting similarity, species packing, and system stability for hierarchical competition-colonization models</a>. The American Naturalist, 153(4), pp.371-383.</li>
+</ul>
+<p>studied the model in the high-diversity limit. Highlighted pathological behaviors of the model. Provided a construction to pack infinitely many species in a finite interval of colonization rates (requires fine-tuning).</p>
+<ul>
+<li>Miller, Z.R., Clenet, M., Della Libera, K., Massol, F. and Allesina, S., 2024. <a href="https://www.pnas.org/doi/abs/10.1073/pnas.2314215121">Coexistence of many species under a random competition–colonization trade-off</a>. Proceedings of the National Academy of Sciences, 121(5), p.e2314215121.</li>
+</ul>
+<p>contains the derivations presented here, and much more.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
