@@ -11,6 +11,7 @@ website:
           - index.qmd
           - lecture_1.qmd
           - lecture_2.qmd
+          - lecture_3.qmd
   navbar:
     left:
       - href: index.qmd

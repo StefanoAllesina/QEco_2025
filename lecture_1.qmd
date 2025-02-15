@@ -328,7 +328,7 @@ $$
 \end{aligned}
 $$
 
-but by Farkas' lemma, we have that $y^T r > 0$  and $y^TA > 0_n^T$; then $P$ always grows in time, and eventually diverges to $\infty$. 
+but by Farkas' lemma, we have that $y^T r > 0$  and $y^TA \geq 0_n^T$; then $P$ always grows in time, and eventually diverges to $\infty$. 
 
 Note that $P(t) \to \infty$ requires some $x_i^{y_i}(t) \to \infty$, which happens when either $x_i(t) \to \infty$ and $y_i > 0$ (i.e., a population grows without bound), or $x_i(t) \to 0$ and $y_i < 0$ (i.e., a population goes extinct). Thus, in the absence of an equilibrium, trajectories can either diverge to infinity, or one or more populations can go extinct.
 
