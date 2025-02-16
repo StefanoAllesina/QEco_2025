@@ -139,6 +139,18 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">GLV with random parameters</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GLV and experimental data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tutorial/tutorial_GLV_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GLV and experimental data — Hands on tutorial</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -403,7 +415,7 @@ P = \prod_i x_i^{y_i}
 &amp;= P (y^T r + y^T A x)
 \end{aligned}
 \]</span></p>
-<p>but by Farkas’ lemma, we have that <span class="math inline">\(y^T r &gt; 0\)</span> and <span class="math inline">\(y^TA &gt; 0_n^T\)</span>; then <span class="math inline">\(P\)</span> always grows in time, and eventually diverges to <span class="math inline">\(\infty\)</span>.</p>
+<p>but by Farkas’ lemma, we have that <span class="math inline">\(y^T r &gt; 0\)</span> and <span class="math inline">\(y^TA \geq 0_n^T\)</span>; then <span class="math inline">\(P\)</span> always grows in time, and eventually diverges to <span class="math inline">\(\infty\)</span>.</p>
 <p>Note that <span class="math inline">\(P(t) \to \infty\)</span> requires some <span class="math inline">\(x_i^{y_i}(t) \to \infty\)</span>, which happens when either <span class="math inline">\(x_i(t) \to \infty\)</span> and <span class="math inline">\(y_i &gt; 0\)</span> (i.e., a population grows without bound), or <span class="math inline">\(x_i(t) \to 0\)</span> and <span class="math inline">\(y_i &lt; 0\)</span> (i.e., a population goes extinct). Thus, in the absence of an equilibrium, trajectories can either diverge to infinity, or one or more populations can go extinct.</p>
 <p>A feasible equilibrium is therefore a necessary condition for coexistence.</p>
 </section>

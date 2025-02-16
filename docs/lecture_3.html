@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>QEco 2025 --- Allesina lecture notes – lecture_3</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">QEco 2025 — Allesina lecture notes</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Lecture notes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lecture_3.html">GLV and experimental data</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">QEco 2025</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Generalized Lotka-Volterra model</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GLV with random parameters</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture_3.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">GLV and experimental data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tutorial/tutorial_GLV_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GLV and experimental data — Hands on tutorial</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#glv-and-experimental-data" id="toc-glv-and-experimental-data" class="nav-link active" data-scroll-target="#glv-and-experimental-data">GLV and experimental data</a>
+  <ul class="collapse">
+  <li><a href="#experiments-in-which-different-combinations-of-species-are-grown-together" id="toc-experiments-in-which-different-combinations-of-species-are-grown-together" class="nav-link" data-scroll-target="#experiments-in-which-different-combinations-of-species-are-grown-together">Experiments in which different combinations of species are grown together</a></li>
+  <li><a href="#example-data" id="toc-example-data" class="nav-link" data-scroll-target="#example-data">Example data</a></li>
+  <li><a href="#a-simple-statistical-framework" id="toc-a-simple-statistical-framework" class="nav-link" data-scroll-target="#a-simple-statistical-framework">A simple statistical framework</a></li>
+  <li><a href="#the-structure-of-equilibria-in-glv" id="toc-the-structure-of-equilibria-in-glv" class="nav-link" data-scroll-target="#the-structure-of-equilibria-in-glv">The structure of equilibria in GLV</a></li>
+  <li><a href="#predicting-coexistence" id="toc-predicting-coexistence" class="nav-link" data-scroll-target="#predicting-coexistence">Predicting coexistence</a></li>
+  <li><a href="#scoring-matrices-b" id="toc-scoring-matrices-b" class="nav-link" data-scroll-target="#scoring-matrices-b">Scoring matrices <span class="math inline">\(B\)</span></a></li>
+  <li><a href="#references-and-further-readings" id="toc-references-and-further-readings" class="nav-link" data-scroll-target="#references-and-further-readings">References and further readings</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="glv-and-experimental-data" class="level1">
+<h1>GLV and experimental data</h1>
+<section id="experiments-in-which-different-combinations-of-species-are-grown-together" class="level2">
+<h2 class="anchored" data-anchor-id="experiments-in-which-different-combinations-of-species-are-grown-together">Experiments in which different combinations of species are grown together</h2>
+<p>For this exploration, we are going to consider a popular type of experiment in which different combinations of species, taken from a <em>species’ pool</em> are co-cultured.</p>
+<p>These experiments are routinely conducted with plants (for example, to test the relationship between productivity and biodiversity), bacteria (for example, to determine rules of thumb for coexistence), protozoans, etc.</p>
+<p>In many cases, only the final outcome (i.e., the density of the populations at the end of each experiment) is available/recorded.</p>
+<p>Typically, the pool of species to experiment with contains only species that can grow in isolation.</p>
+<p>If one has access to a pool of <span class="math inline">\(n\)</span> species, testing all the possible <span class="math inline">\(2^n-1\)</span> combinations obtained by including/excluding each of the species rapidly becomes impractical as <span class="math inline">\(n\)</span> grows. Therefore, all the possible combinations are tested only when <span class="math inline">\(n\)</span> is small, while a small fraction of the possible communities is typically available when <span class="math inline">\(n\)</span> is large.</p>
+</section>
+<section id="example-data" class="level2">
+<h2 class="anchored" data-anchor-id="example-data">Example data</h2>
+<p>For our explorations, we are going to use recent data from Ishizawa and colleagues, which you can find here:</p>
+<p>H. Ishizawa, Y. Tashiro, D. Inoue, M. Ike, H. Futamata. <a href="https://doi.org/10.1073/pnas.2312396121"><em>Learning beyond-pairwise interactions enables the bottom–up prediction of microbial community structure</em></a> PNAS 121 (7) e2312396121 (2024).</p>
+<p>The Authors inoculated duckweed (<em>Lemna minor</em>) with synthetic bacterial communities formed by all possible combinations of seven strains. To this end, they cultured the infected duckweed in flasks for 10 days. At the end of the experiment, they plated the communities on agar plates containing antibiotics that would allow the growth only of a particular strain. In this way, they were able to measure the final density of each of the seven strains in each of the <span class="math inline">\(2^7 - 1 = 127\)</span> possible communities, and conducted each experiment in replicate. The full data set reports the outcome of 692 separate experiments!</p>
+<p>More modestly, here we are going to focus on a smaller pool of three strains taken from the seven available. We therefore have <span class="math inline">\(7\)</span> possible communities, ranging from a single strain growing in isolation to the three strains growing together. For example, a few of the measurements are:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>DW067</th>
+<th>DW102</th>
+<th>DW145</th>
+<th>community</th>
+<th>replicate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>0.8</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>0.812</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>0.529</td>
+<td></td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>0.356</td>
+<td></td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>0.703</td>
+<td>0.909</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>0.395</td>
+<td>0.661</td>
+<td>3</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>0.386</td>
+<td>0.602</td>
+<td>0.563</td>
+<td>4</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>0.379</td>
+<td>0.774</td>
+<td>0.293</td>
+<td>4</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>We can therefore associate each measurement with a) the strain being measured, <span class="math inline">\(i\)</span>; b) the community in which <span class="math inline">\(i\)</span> was grown, <span class="math inline">\(k\)</span>; and c) the (biological) replicate experiment, <span class="math inline">\(r\)</span>.</p>
+</section>
+<section id="a-simple-statistical-framework" class="level2">
+<h2 class="anchored" data-anchor-id="a-simple-statistical-framework">A simple statistical framework</h2>
+<p>The simplest model we can write for this type of data is one in which the outcomes of replicate experiments are independent samples from a distribution:</p>
+<p><span class="math display">\[
+\tilde{x}^{(k,r)}_i \sim Q_i\left(x^{(k)}_i, \gamma_i^{(k)}\right)
+\]</span> where <span class="math inline">\(\tilde{x}_i^{(k, r)}\)</span> is the <em>observed</em> density of population <span class="math inline">\(i\)</span> for the <span class="math inline">\(r\)</span> replicate in which population <span class="math inline">\(i\)</span> is grown in community <span class="math inline">\(k\)</span>. The value <span class="math inline">\(x_i^{(k)}\)</span> represents the <em>true</em> mean of the distribution (i.e., the average if we were to conduct many replicates—hence it does not depend on <span class="math inline">\(r\)</span>), and <span class="math inline">\(\gamma_i^{(k)}\)</span> is a parameter (or several parameters) controlling the shape of the distribution <span class="math inline">\(Q_i\)</span>.</p>
+<p>Implicitly, we are making a very strong assumption: if we observe the community <span class="math inline">\(k\)</span>, it is always found around <span class="math inline">\(x^{(k)}\)</span>—i.e., we cannot have <em>true multistability</em>, in which, depending on initial conditions, we end up with different outcomes in which all populations are present (we can still have that, depending on initial condition, the system ends up at different points/attractors, as long as they have different compositions).</p>
+<p>This model requires estimating all the <span class="math inline">\(x_i^{(k)}\)</span> and <span class="math inline">\(\gamma_i^{(k)}\)</span>, and is therefore not very useful. To make the model applicable to real data, we make another strong assumption:</p>
+<p><span class="math display">\[
+x_i^{(k)} = \alpha_i - \sum_{j \in k;\, j\neq i } \beta_{ij} x_j^{(k)}
+\]</span> The interpretation is simple: if population <span class="math inline">\(i\)</span> is grown by itself, it will reach the carrying capacity <span class="math inline">\(\alpha_i\)</span>; if other species are co-cultured along with <span class="math inline">\(i\)</span>, they will change the final density of <span class="math inline">\(i\)</span> according to their density (<span class="math inline">\(x_j^{(k)}\)</span>) and an interaction term <span class="math inline">\(\beta_{ij}\)</span>.</p>
+<p>We perform some manipulations:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sum_{j \in k;\, j\neq i } \beta_{ij} x_j^{(k)} + x_i^{(k)} &amp;= \alpha_i \\
+\sum_{j \in k;\, j\neq i } \frac{\beta_{ij}}{\alpha_i} x_j^{(k)} + \frac{1}{\alpha_i} x_i^{(k)} &amp;= 1 \\
+\sum_{j \in k;\, j\neq i } B_{ij} x_j^{(k)} + B_{ii} x_i^{(k)} &amp;= 1 \\
+\sum_{j \in k}B_{ij} x_j^{(k)} &amp;=1\\
+\left(B^{(k, k)} x^{(k)}\right)_i &amp;=1\\
+B^{(k, k)} x^{(k)} &amp;= 1_{\|k\|}
+\end{aligned}
+\]</span></p>
+<p>But this is exactly the structure of the equilibria for a GLV model, which we have introduced in Lecture 1.</p>
+</section>
+<section id="the-structure-of-equilibria-in-glv" class="level2">
+<h2 class="anchored" data-anchor-id="the-structure-of-equilibria-in-glv">The structure of equilibria in GLV</h2>
+<p>Take the model:</p>
+<p><span class="math display">\[
+\dot{x} = D(x \circ r)(1_n - Bx)
+\]</span> with <span class="math inline">\(r &gt; 0_n\)</span>; compute all the feasible equilibria and collect them into a matrix <span class="math inline">\(E\)</span>. For example:</p>
+<p><span class="math display">\[
+B = \begin{pmatrix}
+2 &amp; -3 &amp; 3\\
+-2 &amp; 7 &amp; -3\\
+2 &amp; -2 &amp; 2
+\end{pmatrix} \quad
+E = \begin{pmatrix}
+\frac{1}{2} &amp; 0 &amp; 0\\
+0 &amp; \frac{1}{7} &amp; 0\\
+0 &amp; 0 &amp; \frac{1}{2}\\
+\frac{5}{4} &amp;\frac{1}{2} &amp; 0\\
+0 &amp; \frac{5}{8} &amp; \frac{9}{8}\\
+\frac{1}{2} &amp; \frac{1}{2} &amp; \frac{1}{2}
+\end{pmatrix}
+\]</span></p>
+<p>where each row contains a feasible equilibrium (if it exists) corresponding to a given composition.</p>
+<p>Consider the matrix:</p>
+<p><span class="math display">\[
+1_m 1_n^T - E B^T = \begin{pmatrix}
+\color{red} 0 &amp; 2 &amp; 0\\
+\frac{10}{7} &amp; \color{red} 0 &amp; \frac{9}{7}\\
+-\frac{1}{2} &amp;\frac{5}{2} &amp;\color{red}0\\
+\color{red} 0 &amp; \color{red} 0 &amp; -\frac{1}{2}\\
+-\frac{1}{2} &amp; \color{red} 0 &amp; \color{red} 0\\
+\color{red} 0 &amp;\color{red} 0 &amp;\color{red} 0  
+\end{pmatrix}
+\]</span></p>
+<p>For each row, we find <span class="math inline">\(0\)</span> for the corresponding population at equilibrium (in red), and the remaining values express <span class="math inline">\((1_n - B x^{(k)})_j\)</span>, which has the same sign as the invasion growth rates for population <span class="math inline">\(j\)</span>, when <span class="math inline">\(r &gt; 0_n\)</span>. Hence, a saturated equilibrium will correspond to a row with nonpositive values (e.g., the community <span class="math inline">\(k=\{1,2\}\)</span> is saturated, because population 3 cannot invade when rare).</p>
+<p>Next, call <span class="math inline">\(E_i\)</span> the submatrix obtained selecting only rows for which <span class="math inline">\(x_i^{(k)} &gt; 0\)</span>. For example, for population 1:</p>
+<p><span class="math display">\[
+E_1 = \begin{pmatrix}
+\frac{1}{2} &amp; 0 &amp; 0\\
+\frac{5}{4} &amp;\frac{1}{2} &amp; 0\\
+\frac{1}{2} &amp; \frac{1}{2} &amp; \frac{1}{2}
+\end{pmatrix}
+\]</span> We have that:</p>
+<p><span class="math display">\[
+E_i B_i = 1_l
+\]</span></p>
+<p>Where <span class="math inline">\(B_i\)</span> is the <span class="math inline">\(i^\text{th}\)</span> row of <span class="math inline">\(B\)</span>, and <span class="math inline">\(l\)</span> is the number of experiments in which <span class="math inline">\(i\)</span> is present:</p>
+<p><span class="math display">\[
+E_1 B_1 = \begin{pmatrix}
+\frac{1}{2} &amp; 0 &amp; 0\\
+\frac{5}{4} &amp;\frac{1}{2} &amp; 0\\
+\frac{1}{2} &amp; \frac{1}{2} &amp; \frac{1}{2}
+\end{pmatrix} \begin{pmatrix}
+2\\
+-3\\
+3
+\end{pmatrix} = \begin{pmatrix}
+1\\
+1\\
+1
+\end{pmatrix}
+\]</span> Practically, this means that all the <span class="math inline">\(i^\text{th}\)</span> component of all the equilibria <span class="math inline">\(x^{(k)}\)</span> of a GLV model belong to a <em>hyperplane</em> in <span class="math inline">\(\mathbb R^n\)</span> defined by <span class="math inline">\(\sum_{j} B_{ij} x^{(k)}_j = 1\)</span>.</p>
+<p>This also means that we can recover the values of <span class="math inline">\(B_i\)</span> from the equilibria:</p>
+<p><span class="math display">\[
+B_i = E_i^{-1}1_n
+\]</span></p>
+<p>which can be computed when <span class="math inline">\(E_i\)</span> is square. Otherwise, use the Moore-Penrose pseudo-inverse. For example:</p>
+<p><span class="math display">\[
+E_2 = \begin{pmatrix}
+0 &amp; \frac{1}{7} &amp; 0\\
+\frac{5}{4} &amp;\frac{1}{2} &amp; 0\\
+0 &amp; \frac{5}{8} &amp; \frac{9}{8}\\
+\frac{1}{2} &amp; \frac{1}{2} &amp; \frac{1}{2}
+\end{pmatrix}
+\]</span></p>
+<p><span class="math display">\[
+(E_2^T E_2)^{-1}E_2^T 1_4= \begin{pmatrix}
+-2 \\
+7 \\
+-3
+\end{pmatrix} = B_2
+\]</span></p>
+<p>This also provides a naive method to get a draft of <span class="math inline">\(B\)</span> when only the equilibrium values are available.</p>
+<p>The method is going to return a unique solution provided that each matrix <span class="math inline">\(E_i\)</span> has rank <span class="math inline">\(n\)</span>. In practice, this means that, for each population <span class="math inline">\(i\)</span>, a) <span class="math inline">\(E_i\)</span> has at least <span class="math inline">\(n\)</span> rows (i.e., population <span class="math inline">\(i\)</span> is present at <span class="math inline">\(n\)</span> distinct equilibria), and b) each species <span class="math inline">\(j\)</span> is present in at least one equilibrium with <span class="math inline">\(i\)</span>, i.e., each pair of populations is found in at least one equilibrium.</p>
+<p>This might be a tall order when <span class="math inline">\(n\)</span> is large, and in the tutorial we will see how to circumvent this issue.</p>
+</section>
+<section id="predicting-coexistence" class="level2">
+<h2 class="anchored" data-anchor-id="predicting-coexistence">Predicting coexistence</h2>
+<p>Suppose that we have estimated the matrix <span class="math inline">\(B\)</span>, and that we want to determine whether a certain combination of populations can or cannot coexist. This is useful when we have sufficient data to estimate <span class="math inline">\(B\)</span>, but we have not carried out all the possible experiments—we want to predict the outcome of further experiments in advance.</p>
+<p>Then, according to our statistical model, we can take <span class="math inline">\(B^{(k,k)}\)</span> for the desired community <span class="math inline">\(k\)</span>, and take the row sums of the inverse:</p>
+<p><span class="math display">\[
+x^{(k)} = \left( B^{(k,k)} \right)^{-1} 1_{\|k\|}
+\]</span></p>
+<p>If all the components of <span class="math inline">\(x^{(k)}\)</span> are positive, we assume that this will be the outcome of the experiment. If <em>any</em> of the components is negative, on the other hand, we conclude that the populations cannot coexist.</p>
+</section>
+<section id="scoring-matrices-b" class="level2">
+<h2 class="anchored" data-anchor-id="scoring-matrices-b">Scoring matrices <span class="math inline">\(B\)</span></h2>
+<p>The paragraph above suggests a good way to score matrices in practice (i.e., when the empirically-observed matrix <span class="math inline">\(\tilde{E}\)</span> is a noisy estimate of a true matrix <span class="math inline">\(E\)</span>):</p>
+<ul>
+<li>Propose a matrix <span class="math inline">\(B\)</span></li>
+<li>Compute <span class="math inline">\(x^{(k)}\)</span> for each observed <span class="math inline">\(\tilde{x}^{(k,r)}\)</span></li>
+<li>Try to minimize the <em>distance</em> between the predicted and observed</li>
+</ul>
+<p>Naturally, this algorithm relies on a notion of distance. The simplest choice would be to choose <span class="math inline">\(B\)</span> such that the sum of squared deviations is minimized:</p>
+<p><span class="math display">\[
+SSQ(B) = \sum_r \sum_k \sum_i \left(\tilde{x}^{(k,r)}_i - x^{(k)}_i \right)^2
+\]</span></p>
+<p>When the values of <span class="math inline">\(\tilde{x}^{(k)}_i\)</span> vary considerably (as expected when populations interact), minimizing the SSQ will favor matrices that match closely the rows of <span class="math inline">\(\tilde{E}\)</span> containing large values, such that a 10% error on a small value of <span class="math inline">\(\tilde{x}^{(k)}_i\)</span> “counts” less than a 1% error for a large value.</p>
+<p>If we want to put all rows on the same footing, we can implement a Weighted Least Squares scheme, in which</p>
+<p><span class="math display">\[
+WLS(B) = \sum_r \sum_k \sum_i \left(\frac{\tilde{x}^{(k,r)}_i - x^{(k)}_i}{\sigma^{(k)}_i} \right)^2
+\]</span></p>
+<p>where deviations are weighted by the respective standard deviation (for simplicity, we can take <span class="math inline">\(\sigma_i^{(k)} = \sqrt{ \mathbb E\left((\tilde{x}_i^{(k,r)})^2 \right) - \left( \mathbb E\left(\tilde{x}_i^{(k,r)} \right)\right)^2}\)</span>.</p>
+<p>Finally, we can have a likelihood-based approach in which we are trying to maximize the sum of log-likelihoods:</p>
+<p><span class="math display">\[
+\mathcal L(B) = \sum_r \sum_k \sum_i \log P\left(\tilde{x}^{(k,r)}_i|x^{(k)}_i, \gamma_i^{(k)} \right)
+\]</span></p>
+<p>where <span class="math inline">\(P(x|\mu, \gamma)\)</span> is the density of a probability distribution function whose shape is controlled by parameters <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\gamma\)</span>.</p>
+</section>
+<section id="references-and-further-readings" class="level2">
+<h2 class="anchored" data-anchor-id="references-and-further-readings">References and further readings</h2>
+<p>The backbone of the statistical model can be found in numerous articles, which converged to the same solution starting from different angles:</p>
+<ul>
+<li><p>Xiao, Y., Angulo, M. T., Friedman, J., Waldor, M. K., Weiss, S. T., &amp; Liu, Y.-Y. (2017). <a href="https://www.nature.com/articles/s41467-017-02090-2">Mapping the ecological networks of microbial communities</a>. Nature Communications, 8(1), 1–12.</p></li>
+<li><p>Fort, H. (2018). <a href="https://www.sciencedirect.com/science/article/abs/pii/S0304380018303053">On predicting species yields in multispecies communities: Quantifying the accuracy of the linear Lotka-Volterra generalized model</a>. Ecological Modelling, 387, 154–162.</p></li>
+<li><p>Maynard, D. S., Miller, Z. R., &amp; Allesina, S. (2020). <a href="https://www.nature.com/articles/s41559-019-1059-z">Predicting coexistence in experimental ecological communities</a>. Nature Ecology &amp; Evolution, 4(1), 91–100.</p></li>
+<li><p>Ansari, A. F., Reddy, Y., Raut, J., &amp; Dixit, N. M. (2021). <a href="https://www.nature.com/articles/s43588-021-00131-x">An efficient and scalable top-down method for predicting structures of microbial communities</a>. Nature Computational Science, 1(9), 619–628.</p></li>
+<li><p>Davis, J.D., Olivença, D.V., Brown, S.P. and Voit, E.O., (2022). <a href="https://www.frontiersin.org/journals/systems-biology/articles/10.3389/fsysb.2022.1021897/full">Methods of quantifying interactions among populations using Lotka-Volterra models</a>. Frontiers in Systems Biology, 2, p.1021897.</p></li>
+</ul>
+<p>For the tutorial, we are going to closely follow:</p>
+<ul>
+<li>Skwara, A., Lemos‐Costa, P., Miller, Z.R. and Allesina, S., 2023. <a href="https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.14028">Modelling ecological communities when composition is manipulated experimentally</a>. Methods in Ecology and Evolution, 14(2), pp.696-707.</li>
+</ul>
+<p>The same method can be extended to provide a simple test for phylogenetic effects on competition/growth:</p>
+<ul>
+<li>Lemos‐Costa, P., Miller, Z.R. and Allesina, S., 2024. <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/ele.14490">Phylogeny structures species’ interactions in experimental ecological communities</a>. Ecology Letters, 27(8), p.e14490.</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

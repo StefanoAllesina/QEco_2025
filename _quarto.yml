@@ -12,6 +12,7 @@ website:
           - lecture_1.qmd
           - lecture_2.qmd
           - lecture_3.qmd
+          - tutorial/tutorial_GLV_data.qmd
   navbar:
     left:
       - href: index.qmd
