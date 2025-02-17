@@ -305,7 +305,7 @@ $$
 or:
 
 $$
-\exists y \in \mathbb R^n \quad \mid \quad A^T y \geq 0 \;\text{and}\; b^T y < 0 
+\exists y \in \mathbb R^n \quad \mid \quad A^T y \geq 0_n \;\text{and}\; b^T y < 0 
 $$
 :::
 
@@ -587,10 +587,10 @@ dynamics around equilibrium:
 determinant](images/Stability_Diagram.png){width="600"}
 :::
 
-To probe the local asymptotic stability of the equilibria, we can:
+To probe the local asymptotic stability of an equilibrium, we can:
 
 -   Calculate the Jacobian matrix, $J$
--   Plug in an equilibrium, obtaining the corresponding community matrix
+-   Plug in the equilibrium, obtaining the corresponding community matrix
     $M$
 -   Compute the eigenvalues of $M$, $\lambda_i$
 -   If *all* the eigenvalues have negative real part,

@@ -396,7 +396,7 @@ Farkas’ lemma
 \]</span></p>
 <p>or:</p>
 <p><span class="math display">\[
-\exists y \in \mathbb R^n \quad \mid \quad A^T y \geq 0 \;\text{and}\; b^T y &lt; 0
+\exists y \in \mathbb R^n \quad \mid \quad A^T y \geq 0_n \;\text{and}\; b^T y &lt; 0
 \]</span></p>
 </div>
 </div>
@@ -591,10 +591,10 @@ c &amp; d
 </div>
 </div>
 </div>
-<p>To probe the local asymptotic stability of the equilibria, we can:</p>
+<p>To probe the local asymptotic stability of an equilibrium, we can:</p>
 <ul>
 <li>Calculate the Jacobian matrix, <span class="math inline">\(J\)</span></li>
-<li>Plug in an equilibrium, obtaining the corresponding community matrix <span class="math inline">\(M\)</span></li>
+<li>Plug in the equilibrium, obtaining the corresponding community matrix <span class="math inline">\(M\)</span></li>
 <li>Compute the eigenvalues of <span class="math inline">\(M\)</span>, <span class="math inline">\(\lambda_i\)</span></li>
 <li>If <em>all</em> the eigenvalues have negative real part, <span class="math inline">\(\Re (\lambda_i) &lt; 0\)</span>, then the equilibrium is locally asymptotically stable; if <em>any</em> <span class="math inline">\(\Re (\lambda_i) &gt; 0\)</span>, then the equilibrium is unstable, and there are small perturbations that will amplify (at least initially)</li>
 </ul>
