@@ -200,7 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
   <li><a href="#loading-the-code" id="toc-loading-the-code" class="nav-link" data-scroll-target="#loading-the-code">Loading the code</a></li>
   <li><a href="#sum-of-squares" id="toc-sum-of-squares" class="nav-link" data-scroll-target="#sum-of-squares">Sum of squares</a></li>
-  <li><a href="#weighted-leas-squares" id="toc-weighted-leas-squares" class="nav-link" data-scroll-target="#weighted-leas-squares">Weighted leas squares</a></li>
+  <li><a href="#weighted-least-squares" id="toc-weighted-least-squares" class="nav-link" data-scroll-target="#weighted-least-squares">Weighted least squares</a></li>
   <li><a href="#maximum-likelihood" id="toc-maximum-likelihood" class="nav-link" data-scroll-target="#maximum-likelihood">Maximum likelihood</a></li>
   <li><a href="#leave-one-out-cross-validation" id="toc-leave-one-out-cross-validation" class="nav-link" data-scroll-target="#leave-one-out-cross-validation">Leave-one-out cross validation</a></li>
   <li><a href="#simplified-models" id="toc-simplified-models" class="nav-link" data-scroll-target="#simplified-models">Simplified models</a></li>
@@ -483,7 +483,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<p>We can therefore associated each measurement with a) the strain being measured, <span class="math inline">\(i\)</span>; b) the community in which <span class="math inline">\(i\)</span> was grown, <span class="math inline">\(k\)</span>; and c) the (biological) replicate experiment, <span class="math inline">\(r\)</span>.</p>
+<p>We can therefore associate each measurement with a) the strain being measured, <span class="math inline">\(i\)</span>; b) the community in which <span class="math inline">\(i\)</span> was grown, <span class="math inline">\(k\)</span>; and c) the (biological) replicate experiment, <span class="math inline">\(r\)</span>.</p>
 </section>
 <section id="loading-the-code" class="level2">
 <h2 class="anchored" data-anchor-id="loading-the-code">Loading the code</h2>
@@ -538,7 +538,7 @@ SSQ(B) = \sum_r \sum_k \sum_i \left(\tilde{x}^{(k,r)}_i - x^{(k)}_i \right)^2
 </div>
 <p>The values being printed are the SSQ after each round of numerical optimization (in this case, the calculation converges immediately to the solution).</p>
 <p>The boxplots show the data (points), as well as the corresponding boxplots, with the horizontal line being the median value of <span class="math inline">\(\tilde{x}_i^{(k,r)}\)</span> across <span class="math inline">\(r\)</span>, the triangle shows the location of the empirical mean. The circle marks the fitted mean value for the combination of strain/community, obtained computing <span class="math inline">\(\left(B^{(k,k)}\right)^{-1}1_{\|k\|}\)</span>. As you can see, we can find a matrix <span class="math inline">\(B\)</span> that recapitulates the observed means quite well.</p>
-<p>The variable <span class="math inline">\(full_SSQ\)</span> now contains:</p>
+<p>The variable <code>full_SSQ</code> now contains:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(full_SSQ)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -571,8 +571,8 @@ SSQ(B) = \sum_r \sum_k \sum_i \left(\tilde{x}^{(k,r)}_i - x^{(k)}_i \right)^2
 </div>
 <p>Where the points mark the predicted vs observed means, and the crosses the full data. The dashed line is the 1:1 line.</p>
 </section>
-<section id="weighted-leas-squares" class="level2">
-<h2 class="anchored" data-anchor-id="weighted-leas-squares">Weighted leas squares</h2>
+<section id="weighted-least-squares" class="level2">
+<h2 class="anchored" data-anchor-id="weighted-least-squares">Weighted least squares</h2>
 <p>We can repeat the calculation, but this time trying to minimize</p>
 <p><span class="math display">\[
 WLS(B) = \sum_r \sum_k \sum_i \left(\frac{\tilde{x}^{(k,r)}_i - x^{(k)}_i}{\sigma^{(k)}_i} \right)^2
@@ -779,7 +779,7 @@ B^{-1} 1_n&amp;= (D(s) + u v^T)^{-1}1_n\\
 &amp;= \left(D(s)^{-1} - \frac{1}{1 + v^TD(s)^{-1}u}D(s)^{-1} u v^TD(s)^{-1}\right)1_n\\ &amp;= D(s)^{-1}\left(1_n - \frac{v^T D(s)^{-1}1_n}{1 + v^TD(s)^{-1}u} u\right)
 \end{aligned}
 \]</span></p>
-<p>These models can be derived from the consumer-resource framework that you have seen in class.</p>
+<p>These models can be derived from the consumer-resource (see the paper by Skwara <em>et al.</em>).</p>
 <p>We can test different versions of the simplified model. A model with only the diagonal and an extra parameter performs very poorly:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>diag_a11 <span class="ot">&lt;-</span> <span class="fu">run_model</span>(</span>
@@ -855,7 +855,6 @@ B^{-1} 1_n&amp;= (D(s) + u v^T)^{-1}1_n\\
 </div>
 </div>
 <p>And, finally, the model with 8 parameters, <span class="math inline">\(B = D(s) + vw^T\)</span>:</p>
-<p>A model with symmetric interactions, <span class="math inline">\(B = D(s) + vv^T\)</span> does slightly better:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>diag_vwt <span class="ot">&lt;-</span> <span class="fu">run_model</span>(</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">datafile =</span> <span class="st">"Ishizawa_3_strains.csv"</span>, <span class="co"># csv file containing the data to be fit</span></span>
