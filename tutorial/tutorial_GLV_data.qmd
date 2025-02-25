@@ -32,7 +32,8 @@ dt <- read_csv("Ishizawa_3_strains.csv", show_col_types = FALSE)
 dt <- dt %>% mutate_all(.funs = function(x) ifelse(x == 0, "", as.character(round(x, 3)))) 
 cat(md_table(dt))
 ```
-We can therefore associated each measurement with a) the strain being measured, $i$; b) the community in which $i$ was grown, $k$; and c) the (biological) replicate experiment, $r$.
+
+We can therefore associate each measurement with a) the strain being measured, $i$; b) the community in which $i$ was grown, $k$; and c) the (biological) replicate experiment, $r$.
 
 ## Loading the code
 
@@ -72,15 +73,17 @@ full_SSQ <- run_model(
   plot_results = TRUE # plot the results
 )
 ```
+
 The values being printed are the SSQ after each round of numerical optimization (in this case, the calculation converges immediately to the solution). 
 
 The boxplots show the data (points), as well as the corresponding boxplots, with the horizontal line being the median value of $\tilde{x}_i^{(k,r)}$ across $r$, the triangle shows the location of the empirical mean. The circle marks the fitted mean value for the combination of strain/community, obtained computing $\left(B^{(k,k)}\right)^{-1}1_{\|k\|}$. As you can see, we can find a matrix $B$ that recapitulates the observed means quite well.
 
-The variable $full_SSQ$ now contains:
+The variable `full_SSQ` now contains:
 
 ```{r}
 glimpse(full_SSQ)
 ```
+
 Let's plot the predicted vs. observed values:
 
 ```{r}
@@ -89,7 +92,7 @@ plot_pred_obs(full_SSQ)
 
 Where the points mark the predicted vs observed means, and the crosses the full data. The dashed line is the 1:1 line.
 
-## Weighted leas squares
+## Weighted least squares
 
 We can repeat the calculation, but this time trying to minimize
 
@@ -170,6 +173,7 @@ LOO_SSQ <- run_model_LOO(datafile = "Ishizawa_3_strains.csv", model = "full", go
                         LOO_row_num =  40 # exclude all experiments with this community
 )
 ```
+
 All three models are quite successful at recovering the observed means for the community we left out.
 
 ## Simplified models
@@ -200,7 +204,7 @@ B^{-1} 1_n&= (D(s) + u v^T)^{-1}1_n\\
 \end{aligned}
 $$
 
-These models can be derived from the consumer-resource framework that you have seen in class.
+These models can be derived from the consumer-resource (see the paper by Skwara *et al.*).
 
 We can test different versions of the simplified model. A model with only the diagonal and an extra parameter performs very poorly:
 
@@ -238,8 +242,6 @@ plot_pred_obs(diag_vvt)
 
 And, finally, the model with 8 parameters, $B = D(s) + vw^T$:
 
-A model with symmetric interactions, $B = D(s) + vv^T$ does slightly better:
-
 ```{r}
 diag_vwt <- run_model(
   datafile = "Ishizawa_3_strains.csv", # csv file containing the data to be fit
@@ -250,7 +252,6 @@ diag_vwt <- run_model(
   plot_results = TRUE # plot the results
 )
 ```
-
 
 ```{r}
 plot_pred_obs(diag_vwt)
